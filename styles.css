@@ -1,0 +1,287 @@
+/* ==========================================================================
+   PALETA LUMINOSA CON ACENTOS TECNOLÓGICOS (MIX BLANCO Y AZUL)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --brand-dark-blue: #02112b;
+    --brand-blue: #0b2b63;
+    --brand-cyan: #00d2ff;
+    
+    --bg-white: #ffffff;
+    --bg-light: #f4f7fa;
+    
+    --text-dark: #1e293b;
+    --text-gray: #475569;
+    --text-white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-gray);
+    background-color: var(--bg-white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.text-center { text-align: center; }
+.bg-white { background-color: var(--bg-white); }
+.bg-light { background-color: var(--bg-light); }
+
+section { padding: 80px 0; }
+
+/* --- TIPOGRAFÍA --- */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--brand-dark-blue);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.8em;
+    font-weight: 800;
+    color: var(--text-white);
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+h3 { font-size: 1.3em; margin-bottom: 10px; }
+
+p { margin-bottom: 15px; font-size: 1.05em; }
+
+/* --- LAYOUT DIVIDIDO (LADO A LADO) --- */
+.split-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.split-layout.reverse {
+    flex-direction: row-reverse;
+}
+
+.split-layout > div {
+    flex: 1;
+}
+
+/* --- 1. HERO SECTION (AZUL TECNOLÓGICO) --- */
+.hero {
+    background: radial-gradient(circle at top right, #0052d4 0%, var(--brand-blue) 40%, var(--brand-dark-blue) 100%);
+    /* Redujimos el espacio superior a 10px para pegarlo más arriba */
+    padding: 10px 0 60px; 
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Elemento decorativo de fondo tipo curva de luz */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -20%;
+    width: 1000px; height: 1000px;
+    background: radial-gradient(circle, rgba(0, 210, 255, 0.1) 0%, transparent 60%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.hero-text, .hero-image-container { z-index: 2; position: relative; }
+
+/* --- ESTILO MEJORADO DEL LOGO (FONDO BLANCO) --- */
+.hero-logo { 
+    width: 180px; /* Un poco más ancho para compensar los bordes */
+    margin-bottom: 30px; 
+    background-color: var(--bg-white); /* Fondo blanco */
+    padding: 12px 20px; /* Espacio interno para que el logo respire */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+    border: 2px solid rgba(255, 255, 255, 0.8); /* Borde sutil */
+}
+
+.hero .subtitle { color: #a1bde7; font-size: 1.1em; margin-bottom: 30px; }
+
+.hero-badges {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 210, 255, 0.3);
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: var(--text-white);
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.floating-img {
+    width: 100%;
+    max-width: 550px;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.4));
+}
+
+/* --- BOTONES --- */
+.cta-button {
+    display: inline-block;
+    padding: 16px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.primary {
+    background-color: var(--bg-white);
+    color: var(--brand-dark-blue);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.primary:hover {
+    background-color: var(--brand-cyan);
+    color: var(--text-white);
+    transform: translateY(-3px);
+}
+
+.outline-blue {
+    background: transparent;
+    color: var(--brand-blue);
+    border: 2px solid var(--brand-blue);
+}
+
+.outline-blue:hover {
+    background: var(--brand-blue);
+    color: var(--text-white);
+}
+
+/* --- SECCIÓN BENEFICIOS & TESTIMONIOS --- */
+.benefits-grid, .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-item, .testimonial-card {
+    background: var(--bg-white);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--brand-cyan);
+    transition: transform 0.3s ease;
+}
+
+.benefit-item:hover, .testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 10, 40, 0.1);
+}
+
+.icon-box {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* --- LISTAS ESTILO CHECK --- */
+.check-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.check-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.check-list li::before {
+    content: '✔️️';
+    position: absolute;
+    left: 0;
+    color: var(--brand-cyan);
+}
+
+/* --- VIDEO --- */
+.video-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* --- FOOTER Y FINAL CTA --- */
+.final-cta {
+    background: var(--brand-dark-blue);
+}
+
+.final-cta h2, .final-cta p {
+    color: var(--text-white);
+}
+
+footer {
+    background-color: #010816;
+    color: #64748b;
+    padding: 40px 0;
+    font-size: 0.9em;
+}
+
+/* --- CLASES DE ANIMACIÓN JS --- */
+.anim-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.anim-fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 900px) {
+    .split-layout, .split-layout.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .hero { padding: 20px 0 40px; text-align: center; }
+    
+    .hero-badges { justify-content: center; flex-wrap: wrap; }
+    
+    .check-list li { text-align: left; }
+
+    h1 { font-size: 2.2em; }
+    
+    footer .split-layout {
+        flex-direction: column;
+        text-align: center !important;
+    }
+    
+    footer .split-layout div { text-align: center !important; }
+}
